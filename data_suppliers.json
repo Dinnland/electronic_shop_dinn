@@ -1,0 +1,110 @@
+[
+{
+  "model": "supplier.supplier",
+  "pk": 15,
+  "fields": {
+    "name": "El-System",
+    "time_of_creation": "2023-12-04T02:38:13.786Z",
+    "previous_supplier": 20,
+    "ranking": "0",
+    "supplier_type": "factory",
+    "email": "El-System@gmail.com",
+    "country": "США",
+    "city": "Нью-Йорк",
+    "street": "Конгресс-авеню",
+    "house_number": "2",
+    "debt_amount": 0.0,
+    "debt_type": "RUB"
+  }
+},
+{
+  "model": "supplier.supplier",
+  "pk": 17,
+  "fields": {
+    "name": "ИП Егоров Д. Г.",
+    "time_of_creation": "2023-12-04T07:19:46.178Z",
+    "previous_supplier": 20,
+    "ranking": "1",
+    "supplier_type": "entrepreneur",
+    "email": "egorov@mail.com",
+    "country": "Россия",
+    "city": "Казань",
+    "street": "Декабристов",
+    "house_number": "54",
+    "debt_amount": 20000.0,
+    "debt_type": "RUB"
+  }
+},
+{
+  "model": "supplier.supplier",
+  "pk": 18,
+  "fields": {
+    "name": "ООО Восток",
+    "time_of_creation": "2023-12-04T07:24:28.692Z",
+    "previous_supplier": 17,
+    "ranking": "2",
+    "supplier_type": "retail",
+    "email": "vostok@mail.com",
+    "country": "Россия",
+    "city": "Москва",
+    "street": "Ленина",
+    "house_number": "23а",
+    "debt_amount": 36000.0,
+    "debt_type": "RUB"
+  }
+},
+{
+  "model": "supplier.supplier",
+  "pk": 20,
+  "fields": {
+    "name": "Завод Электроники имени В. И. Ленина",
+    "time_of_creation": "2023-12-04T00:38:38Z",
+    "previous_supplier": null,
+    "ranking": "0",
+    "supplier_type": "factory",
+    "email": "zaveil@mail.com",
+    "country": "Россия",
+    "city": "Казань",
+    "street": "Декабристов",
+    "house_number": "59/1",
+    "debt_amount": 0.0,
+    "debt_type": "RUB"
+  }
+},
+{
+  "model": "supplier.product",
+  "pk": 2,
+  "fields": {
+    "supplier": 18,
+    "name": "Смартфон redmi",
+    "model": "Note 12",
+    "launch_date": "2023-12-04T07:27:23.870Z",
+    "image": "",
+    "price": 14000.0
+  }
+},
+{
+  "model": "supplier.product",
+  "pk": 3,
+  "fields": {
+    "supplier": 17,
+    "name": "Смартфон Samsung",
+    "model": "Galaxy S21",
+    "launch_date": "2023-12-04T07:28:30.513Z",
+    "image": "",
+    "price": 98000.0
+  }
+},
+{
+  "model": "supplier.product",
+  "pk": 4,
+  "fields": {
+    "supplier": 17,
+    "name": "Ноутбук AORUS",
+    "model": "7 9KF",
+    "launch_date": "2023-12-04T07:29:51.977Z",
+    "image": "",
+    "price": 103000.0
+  }
+}
+]

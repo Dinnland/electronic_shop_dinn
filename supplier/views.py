@@ -1,6 +1,4 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.filters import SearchFilter, OrderingFilter
 from supplier.models import Supplier, Product
 from supplier.serializers.serializers import SupplierSerializer, ProductSerializer
@@ -38,18 +36,17 @@ class SupplierViewSet(viewsets.ModelViewSet):
         elif new_supplier.previous_supplier:
             if new_supplier.previous_supplier.ranking == '0':
                 new_supplier.ranking = '1'
+            elif new_supplier.previous_supplier.supplier_type == 'factory':
+                new_supplier.ranking = '1'
             elif new_supplier.previous_supplier.ranking == '1':
                 new_supplier.ranking = '2'
-        # else:
-        #     new_supplier.ranking = None
-        # new_supplier.owner = self.request.user
+
         new_supplier.save()
 
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
 
     def perform_update(self, serializer):
-
 
         new_supplier = serializer.save()
         if new_supplier.supplier_type == 'factory':
@@ -69,10 +66,3 @@ class ProductViewSet(viewsets.ModelViewSet):
     """ Это ViewSet для User """
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
-
-    # def get_permissions(self):
-    #     if self.action == 'create':
-    #         permission_classes = [IsAuthenticated]
-    #     else:
-    #         permission_classes = [IsAuthenticated]
-    #     return [permission() for permission in permission_classes]
